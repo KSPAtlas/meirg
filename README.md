@@ -1,58 +1,54 @@
-# rouille
+# meirg
 
 ![](https://github.com/bnjbvr/rouille/raw/principale/logo.jpeg)
 
-Aren't you _le tired_ from writing Rust programs in English? Do you like saying
-"merde" a lot? Would you like to try something different, in an exotic and
-funny-sounding language? Would you want to bring some French touch to your
+Aren't you _sgìth_ from writing Rust programs in English? Do you like saying
+_a ghalla_ or _uisge-beatha_ a lot? Would you like to try something different, in an exotic and
+funny-sounding language? Would you want to bring some Highland touch to your
 programs?
 
-**rouille** (French for _Rust_) is here to save your day, as it allows you to
-write Rust programs in French, using French keywords, French function names,
-French idioms.
+**meirg** (Scottish Gaelic for _Rust_) is here to save your day, as it allows you to
+write Rust programs in Gaelic, using Gaelic keywords, Gaelic function names,
+Gaelic idioms.
 
 This has been designed to be used as the official programming language to
-develop the future French sovereign operating system. 
+develop the future Scottish sovereign operating system. 
 
-If you're from the French or any other governement with French as an official 
-language: I will be awaiting your donations on
-[liberapay](https://liberapay.com/bnjbvr/).
-
-You're from Quebec (or elsewhere) and don't feel at ease using only French words? 
+You're from Nova Scotia (or elsewhere) and don't feel at ease using only Gaelic words? 
 
 Don't worry!
-French Rust is fully compatible with English-Rust, so you can mix both at your
+Gaelic Rust is fully compatible with English-Rust, so you can mix both at your
 convenience.
 
-Here's an example of what can be achieved with Rouille:
+Here's an example of what can be achieved with Meirg:
 
-### trait and impl (aka convention et réalisation)
+### trait and impl (aka trèithe 's toirt gu buil)
 
 ```rust
-rouille::rouille! {
-    utilisons std::collections::Dictionnaire comme Dico;
+meirg::meirg! {
+    dèan_feum_de std::collections::faclair mar Facl;
 
-    convention CléValeur {
-        fonction écrire(&soi, clé: Chaîne, valeur: Chaîne);
-        fonction lire(&soi, clé: Chaîne) -> PeutÊtre<&Chaîne>;
+    trèithe IuchairLuach {
+        foincsean sgrìobh(&fhèin, iuchair: Sreang, luach: Sreang);
+        foincsean leugh(&fhèin, iuchair: Sreang) -> Dòcha<&Sreang>;
     }
 
-    statique mutable DICTIONNAIRE: PeutÊtre<Dico<Chaîne, Chaîne>> = Rien;
+    stadaigeach caochlaideach FACLAIR: Dòcha<Facl<Sreang, Sreang>> = ChanEilSìon;
 
-    structure Concrète;
+    structar Riochdail;
 
-    réalisation CléValeur pour Concrète {
-        fonction écrire(&soi, clé: Chaîne, valeur: Chaîne) {
-            soit dico = dangereux {
-                DICTIONNAIRE.prendre_ou_insérer_avec(Défaut::défaut)
+    toirt_gu_buil IuchairLuach airson Riochdail {
+        foincsean sgrìobh(&fhèin, iuchair: Sreang, luach: Sreang) {
+            biodh facl = gàbhach {
+                FACLAIR.gabh_no_cuir_le(Bun::bun)
             };
-            dico.insérer(clé, valeur);
+            facl.cuir(iuchair, luach);
         }
-        fonction lire(&soi, clé: Chaîne) -> Résultat<PeutÊtre<&Chaîne>, Chaîne> {
-            si soit Quelque(dico) = dangereux { DICTIONNAIRE.en_réf() } {
-                Bien(dico.lire(&clé))
-            } sinon {
-                Arf("fetchez le dico".vers())
+        foincsean leugh(&fhèin, iuchair: Sreang) -> Buil<Dòcha<&Sreang>, Sreang> {
+            ma biodh Beagan(facl) = gàbhach { FACLAIR.mar_reif() } {
+                Ceart(facl.leugh(&iuchair))
+            } air_neo {
+                Mearachd("faigh an faclair".gu())
             }
         }
     }
@@ -62,36 +58,25 @@ rouille::rouille! {
 ### Support for regional languages
 
 ```rust
-#[légal(code_inaccessible)]
-fonction secondaire() {
-    merde!("oh non"); // for the true French experience
-    calisse!("tabarnak"); // for friends speaking fr-ca
-    oups!("fetchez la vache"); // in SFW contexts
+#[leig(còd_neo_ruigsinneach)]
+foincsean dàrnach() {
+    a_ghalla!("ò mo chreach"); // for the true Scottish Gaelic experience
+    ar_son_diabhal!("ó mo thrua"); // for friends speaking Irish
+    gabh_giorag!("abab"); // in SFW contexts
 }
 ```
 
-### Other examples
+### other examples
 
 See the [examples](./examples/src/main.rs) to get a rough sense of the whole
-syntax. Voilà, that's it.
+syntax. Sin agadsa dhut, that's it.
 
-## les contributions
+## tabhartasan
 
-First of all, _merci beaucoup_ for considering participating to this joke, the
-French government will thank you later! Feel free to throw in a few identifiers
-here and there, and open a pull-request against the `principale` (French for
+First of all, _tapadh leat_ for considering participating to this joke, the
+Scottish government will thank you later! Feel free to throw in a few identifiers
+here and there, and open a pull-request against the `prìomhail` (Scottish Gaelic for
 `main`) branch.
-
-Please don't introduce swear words, though: we will not excuse your French.
-
-## but why would you do zat
-
-- horsin around
-- playing with raw proc macros
-- making a bit of fun about programming languages that do this seriously,
-  though I can see their utility.
-- winking at [Marcel](https://github.com/brouberol/marcel)
-- c'est chic
 
 ## Other languages
 
@@ -137,12 +122,10 @@ Please don't introduce swear words, though: we will not excuse your French.
 - Sanskrit: [jangam](https://github.com/ishantanu/jangam.git)
 - All of the above: [unirust](https://github.com/charyan/unirust)
 
-## un grand merci
+## taing
 
-- [@VentGrey](https://twitter.com/VentGrey) for making a logo!
+- @bnjbvr for making the original project (Rouille)
 
-## la license
+# an ceadachas
 
-[License Publique Rien à Branler](http://sam.zoy.org/lprab/),
-_le_ official translation of the [WTFPL](http://www.wtfpl.net/)
-by the same author.
+[WTFPL](http://www.wtfpl.net/).
