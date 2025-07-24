@@ -1,6 +1,6 @@
 # meirg
 
-![](https://github.com/bnjbvr/rouille/raw/principale/logo.jpeg)
+![](rustkilt.png)
 
 Aren't you _sgìth_ from writing Rust programs in English? Do you like saying
 _a ghalla_ or _uisge-beatha_ a lot? Would you like to try something different, in an exotic and
