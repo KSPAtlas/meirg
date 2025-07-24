@@ -48,7 +48,7 @@ meirg::meirg! {
             ma biodh Beagan(facl) = gàbhach { FACLAIR.mar_reif() } {
                 Ceart(facl.leugh(&iuchair))
             } air_neo {
-                Mearachd("faigh an faclair".gu())
+                Mear("faigh an faclair".gu())
             }
         }
     }
