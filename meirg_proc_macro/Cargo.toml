@@ -1,0 +1,10 @@
+[package]
+name = "meirg"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+meirg_gineachas_teanail = { path = "../meirg_gineachas_teanail_proc_macro" }
+
+[lib]
+proc-macro = true

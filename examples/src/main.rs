@@ -1,85 +1,85 @@
-rouille::rouille! {
-    externe cagette rouille;
+meirg::meirg! {
+    a_muigh cliath_bhogsa meirg;
 
-    utilisons std::collections::Dictionnaire comme Dico;
+   dèan_feum_de std::collections::faclair mar Facl;
 
-    convention CléValeur {
-        fonction écrire(&soi, clé: Chaîne, valeur: Chaîne);
-        fonction lire(&soi, clé: Chaîne) -> Résultat<PeutÊtre<&Chaîne>, Chaîne>;
+    trèithe IuchairLuach {
+        foincsean sgrìobh(&fhèin, iuchair: Sreang, luach: Sreang);
+        foincsean leugh(&fhèin, iuchair: Sreang) -> Dòcha<&Sreang>;
     }
 
-    statique mutable DICTIONNAIRE: PeutÊtre<Dico<Chaîne, Chaîne>> = Rien;
+    stadaigeach caochlaideach FACLAIR: Dòcha<Facl<Sreang, Sreang>> = ChanEilSìon;
 
-    structure Concrète;
+    structar Riochdail;
 
-    réalisation CléValeur pour Concrète {
-        fonction écrire(&soi, clé: Chaîne, valeur: Chaîne) {
-            soit dico = dangereux {
-                DICTIONNAIRE.prendre_ou_insérer_avec(Défaut::défaut)
+    toirt_gu_buil IuchairLuach airson Riochdail {
+        foincsean sgrìobh(&fhèin, iuchair: Sreang, luach: Sreang) {
+            biodh facl = gàbhach {
+                FACLAIR.gabh_no_cuir_le(Bun::bun)
             };
-            dico.insérer(clé, valeur);
+            facl.cuir(iuchair, luach);
         }
-        fonction lire(&soi, clé: Chaîne) -> Résultat<PeutÊtre<&Chaîne>, Chaîne> {
-            si soit Quelque(dico) = dangereux { DICTIONNAIRE.en_réf() } {
-                Bien(dico.lire(&clé))
-            } sinon {
-                Arf("fetchez le dico".vers())
+        foincsean leugh(&fhèin, iuchair: Sreang) -> Buil<Dòcha<&Sreang>, Sreang> {
+            ma biodh Beagan(facl) = gàbhach { FACLAIR.mar_reif() } {
+                Ceart(facl.leugh(&iuchair))
+            } air_neo {
+                Mear("faigh an faclair".gu())
             }
         }
-    }
+    } 
 
-    public(cagette) fonction peut_etre(i: u32) -> PeutÊtre<Résultat<u32, Chaîne>> {
-        si i % 2 == 1 {
-            si i == 42 {
-                Quelque(Arf(Chaîne::depuis("merde")))
-            } sinon {
-                Quelque(Bien(33))
+    poblach (cliath_bhogsa) foincsean dòcha(i: u32) -> Dòcha<Buil<u32, Sreang>> {
+        ma i % 2 == 1 {
+            ma i == 42 {
+                Beagan(Mear(Sreang::bho("a ghalla")))
+            } air_neo {
+                Beagan(Ceart(33))
             }
-        } sinon {
-            Rien
+        } air_neo {
+            ChanEilSìon
         }
     }
 
-    asynchrone fonction exemple() {
+    neo_shionc foincsean eisimpleir() {
     }
 
-    asynchrone fonction exemple2() {
-        exemple().attend;
+    neo_shionc foincsean eisimpleir2() {
+        eisimpleir().feith;
     }
 
-    fonction principale() {
-        soit mutable x = 31;
+    foincsean prìomhail() {
+        biodh caochlaideach x = 31;
 
-        selon x {
+        maidsich x {
             42 => {
-                affiche!("omelette du fromage")
+                lèirig!("uisge-beatha")
             }
-            _ => affiche!("voila")
+            _ => lèirig!("sin agadsa dhut")
         }
 
-        pour i de 0..10 {
-            soit val = boucle {
-                arrête i;
+        airson i ann_an 0..10 {
+            biodh luach = dul {
+                sguir i;
             };
 
-            tant que x < val {
+            nuair x < luach {
                 x += 1;
             }
 
-            x = si soit Quelque(resultat) = peut_etre(i) {
-                resultat.déballer()
-            } sinon {
+            x = ma biodh Beagan(buil) = dòcha(i) {
+                buil.tuainig()
+            } air_neo {
                 12
             };
         }
 
-        //secondaire();
+        //dàrnach();
     }
 
-    #[légal(code_inaccessible)]
-    fonction secondaire() {
-        merde!("oh non"); // for the true French experience
-        calisse!("tabernacle"); // for friends speaking fr-ca
-        oups!("fetchez la vache"); // in SFW contexts
+    #[leig(còd_neo_ruigsinneach)]
+    foincsean dàrnach() {
+        a_ghalla!("ò mo chreach"); // for the true Scottish Gaelic experience
+        ar_son_diabhal!("ó mo thrua"); // for friends speaking Irish
+        gabh_giorag!("abab"); // in SFW contexts
     }
 }
