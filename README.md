@@ -26,11 +26,11 @@ Here's an example of what can be achieved with Meirg:
 
 ```rust
 meirg::meirg! {
-    dèan_feum_de std::collections::faclair mar Facl;
+    dèan_feum_de std::collections::Faclair mar Facl;
 
     trèithe IuchairLuach {
         foincsean sgrìobh(&fhèin, iuchair: Sreang, luach: Sreang);
-        foincsean leugh(&fhèin, iuchair: Sreang) -> Dòcha<&Sreang>;
+        foincsean leugh(&fhèin, iuchair: Sreang) -> Buil<Dòcha<&Sreang>, Sreang>;
     }
 
     stadaigeach caochlaideach FACLAIR: Dòcha<Facl<Sreang, Sreang>> = ChanEilSìon;
